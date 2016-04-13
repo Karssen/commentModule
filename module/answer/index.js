@@ -31,14 +31,14 @@
             let commentHTML = this.commentTemplateFunction({
                 comment: value
             });
-            let commentCreate = new CustomEvent("commentCreate", {
+            let commentCreated = new CustomEvent("commentCreated", {
                 bubbles: true
             });
 
 
             this.post.insertAdjacentHTML('beforeEnd', commentHTML);
             this._removeForm();
-            this.post.dispatchEvent(commentCreate);
+            this.post.dispatchEvent(commentCreated);
 
         }
         _removeForm(){

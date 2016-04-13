@@ -10,7 +10,7 @@ class CommentModule{
         this.formTemplate = options.formTemplate;
         this.counter = new makeCounter();
         this.elem.addEventListener('click', this._onClick.bind(this));
-        this.elem.addEventListener('commentCreate', this._onCommentCreate.bind(this));
+        this.elem.addEventListener('commentCreated', this._onCommentCreated.bind(this));
     }
 
     _onClick(event){
