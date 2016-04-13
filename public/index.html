@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.2.0/lodash.js"></script>
+    <script src="../module/counter/index.js"></script>
+    <script src="../module/answer/index.js"></script>
+    <script src="../module/commentsModule/index.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="../styles/style.css"/>
+</head>
+<body>
+<script type="text/template" id="sub-media-template">
+    <ul class="sub-media-list">
+        <li class="sub-media">
+            <div class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object img-rounded" src="../img/2.jpg" alt="">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="author">Пётр</div>
+                            <div class="metadata">
+                                <span class="date">19 ноября 2015, 10:28</span>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="media-text text-justify"><%= comment %></div>
+                        </div>
+                        <div class="panel-footer clearfix">
+                            <div class="likes pull-right">
+                                <span class="glyphicon glyphicon-heart"></span>
+                                <span class="badge">4</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</script>
+<script type="text/template" id="form-template">
+    <div class="comment-form" id="comment-form">
+        <fieldset>
+            <legend>Добавить комментарий</legend>
+            <textarea name="comment-text" id="comment-text" cols="40" rows="6"></textarea>
+        </fieldset>
+        <button class="btn btn-primary" id="make-comment">Написать</button>
+    </div>
+</script>
+<div class="wrapper">
+    <div class="comments" id="comments">
+        <h3 class="title-comments">Комментарии <span class="comments-number"></span></h3>
+        <ul class="media-list">
+            <!-- Комментарий (уровень 1) -->
+            <li class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object img-rounded" src="../img/1.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="author">Дима</div>
+                            <div class="metadata">
+                                <span class="date">16 ноября 2015, 13:43</span>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="media-text text-justify">Lorem ipsum dolor sit amet. Blanditiis praesentium voluptatum deleniti atque. Autem vel illum, qui blanditiis praesentium voluptatum deleniti atque corrupti. Dolor repellendus cum soluta nobis. Corporis suscipit laboriosam, nisi ut enim. Debitis aut perferendis doloribus asperiores repellat. sint, obcaecati cupiditate non numquam eius. Itaque earum rerum facilis. Similique sunt in ea commodi. Dolor repellendus numquam eius modi. Quam nihil molestiae consequatur, vel illum, qui ratione voluptatem accusantium doloremque.</div>
+                        </div>
+                        <div class="panel-footer clearfix">
+                            <a class="btn btn-primary" data-role="answer" href="#">Ответить</a>
+                            <div class="likes pull-right">
+                                <span class="glyphicon glyphicon-heart"></span>
+                                <span class="badge">4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Вложенный медиа-компонент (уровень 2) -->
+                </div>
+            </li>
+            <li class="media">
+                <div class="media-left">
+                    <a href="#">
+                        <img class="media-object img-rounded" src="../img/2.jpg" alt="...">
+                    </a>
+                </div>
+                <div class="media-body">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <div class="author">Дима</div>
+                            <div class="metadata">
+                                <span class="date">16 ноября 2015, 13:43</span>
+                            </div>
+                        </div>
+                        <div class="panel-body">
+                            <div class="media-text text-justify">Lorem ipsum dolor sit amet. Blanditiis praesentium voluptatum deleniti atque. Autem vel illum, qui blanditiis praesentium voluptatum deleniti atque corrupti. Dolor repellendus cum soluta nobis. Corporis suscipit laboriosam, nisi ut enim. Debitis aut perferendis doloribus asperiores repellat. sint, obcaecati cupiditate non numquam eius. Itaque earum rerum facilis. Similique sunt in ea commodi. Dolor repellendus numquam eius modi. Quam nihil molestiae consequatur, vel illum, qui ratione voluptatem accusantium doloremque.</div>
+                        </div>
+                        <div class="panel-footer clearfix">
+                            <a class="btn btn-primary" data-role="answer" href="#">Ответить</a>
+                            <div class="likes pull-right">
+                                <span class="glyphicon glyphicon-heart"></span>
+                                <span class="badge">4</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Вложенный медиа-компонент (уровень 2) -->
+                </div>
+            </li>
+            <!-- Конец комментария (уровень 1) -->
+        </ul>
+
+    </div>
+    </div>
+    <script src="../index.js"></script>
+</body>
+</html>
